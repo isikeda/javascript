@@ -29,6 +29,7 @@ year = 1991;
 console.log(typeof year);
 console.log(typeof null);
 */
+
 /*
 //let keyword allows to change future, const doesnt, var is an old guy 
 
@@ -43,6 +44,7 @@ var job = "programmer";
 lastName = "isik"; // never do this
 console.log(lastName);
 */
+
 /*
 const curYear = 2023;
 const ageBerat = curYear - 2002;
@@ -59,7 +61,6 @@ console.log(firstName, lastName);
 
 console.log(ageBerat > ageEda);
 */
-
 
 /*
 const birthYear = 2001;
@@ -78,6 +79,7 @@ console.log(`String with
 multiple 
 lines`);
 */
+
 /*
 const age = 15;
 //const isOldEnough = age >= 18;
