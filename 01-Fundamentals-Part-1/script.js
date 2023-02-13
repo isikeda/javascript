@@ -124,7 +124,7 @@ n = n - 1;
 console.log(n);
 */
 
-/*
+/*denemedenemedeneme
 //Section2_21
 // 5 falsy values : 0, '', undefined, null, NaN
 
