@@ -1,0 +1,38 @@
+* {
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(107, 115, 207);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  margin-left: 25px;
+}
+
+.first {
+  font-size: 15px;
+  color: rgb(6, 10, 126);
+}
+
+#your-name {
+  background-color: aquamarine;
+  border: 5px solid #444;
+  padding: 25px;
+  margin: 30px;
+}
+
+a {
+  background-color: rgb(255, 255, 255);
+}
+
+#your-name h2 {
+  color: purple;
+}
