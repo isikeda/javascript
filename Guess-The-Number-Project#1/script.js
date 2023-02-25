@@ -19,7 +19,7 @@ const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
 
-document.querySelector(".check").addEventListener("click", function () {
+const fCheck = function () {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
 
@@ -65,6 +65,10 @@ document.querySelector(".check").addEventListener("click", function () {
       displayMessage("You lost the game!");
     }
   }
+};
+
+document.querySelector(".check").addEventListener("click", function () {
+  fCheck();
 });
 
 document.querySelector(".again").addEventListener("click", function () {
@@ -76,4 +80,11 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
   document.querySelector(".score").textContent = score;
   secretNum = Math.trunc(Math.random() * 20 + 1);
+});
+
+document.addEventListener("keydown", function (e) {
+  //console.log("A key was pressed");
+  if (e.key === "Enter") {
+    fCheck();
+  }
 });
