@@ -140,3 +140,11 @@ h1 {
   font-size: 40px;
   font-weight: bold;
 }
+
+.howto {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 40px;
+  font-weight: bold;
+}

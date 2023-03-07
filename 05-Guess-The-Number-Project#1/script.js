@@ -88,3 +88,9 @@ document.addEventListener("keydown", function (e) {
     fCheck();
   }
 });
+
+document.querySelector(".howto").addEventListener("click", function () {
+  alert(
+    "HOW TO PLAY?\nGuess a number between 1 and 20.\nIf it is not true make a guess according to the message that appears.\nContinue making guesses until you find THE NUMBER.\nPress again button if you want to play again.\nGLHF :)"
+  );
+});
