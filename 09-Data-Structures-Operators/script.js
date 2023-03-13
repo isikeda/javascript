@@ -1,10 +1,22 @@
 "use strict";
 
-// Data needed for a later exercise
-const flights =
-  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-// Data needed for first part of the section
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -12,22 +24,10 @@ const restaurant = {
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //ES6 enhanced object literals
+  openingHours,
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -47,6 +47,182 @@ const restaurant = {
   },
 };
 
+/*Strings
+const flights =
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+
+const airline = "THY";
+console.log(airline.length);
+console.log(airline.indexOf("H"));
+console.log(airline.indexOf("h")); //output is -1
+
+const anything = "Eda Isik Itu";
+console.log(anything.slice(1));
+console.log(anything.slice(2));
+console.log(anything.slice(3));
+console.log(anything.slice(4));
+
+console.log(anything.slice(0, anything.indexOf(" ")));
+console.log(anything.slice(anything.lastIndexOf(" ") + 1));
+
+console.log(new String("eda"));
+console.log(typeof new String("eda"));
+
+console.log(anything.toLowerCase());
+console.log(anything.toUpperCase());
+
+//getting rid of white spaces and wrong upper letters
+const email = "hello@jonas.io";
+const loginEmail = "  Hello@Jonas.Io   \n";
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmed = lowerEmail.trim();
+console.log(trimmed);
+
+const normalized = loginEmail.toLowerCase().trim();
+console.log(normalized);
+
+const priceTR = "5,6₺";
+const priceUS = priceTR.replace("₺", "$").replace(",", ".");
+console.log(priceTR, priceUS);
+
+console.log("a+very+nice+string".split("+"));
+console.log("Eda Işık Dalsuna".split(" "));
+
+const [first, last] = "Eda Işık".split(" ");
+const newN = ["Ms.", first, last.toUpperCase()].join(" ");
+console.log(newN);
+
+/*Maps
+const ques = new Map([
+  ["q", "What is the best programming language in the world?"],
+  [1, "C++"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 1],
+  [true, "Correct!"],
+  [false, "Try again!"],
+]);
+
+//console.log(ques);
+console.log(ques.get("q"));
+
+for (const [key, value] of ques) {
+  if (typeof key === "number") {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+const ans = Number(prompt("Your answer:"));
+console.log(ques.get(ans === ques.get("correct")));
+
+console.log([...ques]);
+console.log(ques.entries());
+console.log(ques.keys());
+console.log(ques.values());
+
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbon, Portugal"));
+
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are open")
+  .set(false, "We are closed");
+
+console.log(rest.get("name"));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+//rest.clear();
+const arr = [1, 2];
+//rest.set([1, 2], "Test");
+rest.set(arr, "Test");
+console.log(rest);
+console.log(rest.size);
+
+//console.log(rest.get([1, 2])); //undefined
+console.log(rest.get(arr));
+*/
+
+/*Sets
+const ordersSet = new Set([
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Risotto",
+  "Pasta",
+  "Pizza",
+]);
+console.log(new Set("Eda"));
+console.log(ordersSet.size);
+console.log(ordersSet.has("Pizza"));
+console.log(ordersSet.has("Bread"));
+ordersSet.add("Garlic Bread");
+ordersSet.add("Garlic Bread");
+ordersSet.delete("Risotto");
+//ordersSet.clear();
+console.log(ordersSet);
+for (const order of ordersSet) console.log(order);
+
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffUn = [...new Set(staff)];
+console.log(staff);
+console.log(staffUn);
+
+console.log(
+  new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+);
+
+console.log(new Set("edaisikdalsuna").size);
+*/
+
+/*
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+for (const [key, { open, close }] of Object.entries(openingHours)) {
+  console.log(`On ${key} we open at ${open} and close at ${close}.`);
+}
+*/
+/*
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
+
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? "closed";
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist");//??
+*/
+
+/*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+*/
+//console.log(...menu.entries());
 /*
 const rest1 = {
   name: "Capri",
@@ -228,5 +404,3 @@ console.log(i, j, k);
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
-
-//asjkdnjksdnks
